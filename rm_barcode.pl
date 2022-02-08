@@ -6,7 +6,7 @@ my $dir = "./[YOUR FOLDER PATH]";
 open OUT, ">allinsert.txt";
 my %seq; my $name;
 my @dir; my @dir2;
-opendir (DIR, $dir) or die "can't open the directory!";
+opendir (DIR, $dir) or die "can't open the directory!\n";
 @dir = readdir DIR;
 closedir DIR;
 foreach (@dir) {
@@ -14,7 +14,7 @@ foreach (@dir) {
     push (@dir2, $_)};};
 
 foreach my $a(@dir2){
-      open IN,"./$dir/$a" or die "can't open the $a!";
+      open IN,"./$dir/$a" or die "can't open the $a!\n";
       while(<IN>){
         chomp;
         if (/>/){ $name=$_; }
